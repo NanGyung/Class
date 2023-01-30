@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {outline: 1px solid red;}
+    body {
+      margin:0;
+    }
+
+    ul {
+      margin:0; padding:0;
+      list-style: none;
+    }
+
+    a{
+      text-decoration: none;
+      color:inherit;
+    }
+
+    /* 전체 레이아웃 */
+    .wrap {
+      display: grid;
+      grid-template-areas: 
+        "um       um      um"
+        "hd-l     hd      hd-r"
+        "gnb-l    gnb     gnb-r"
+        "mn-l     mn      mn-r"
+        "fm-l     fm      fm-r"
+        "ft-l     ft      ft-r"
+      ;
+      grid-template-columns: 1fr minmax(300px,800px) 1fr; 
+      grid-template-rows: 50px 200px 50px auto 50px 150px;
+    }
+
+    /* 메인 레아아웃 */
+    .wrap .item.mn main {
+      display: flex;
+      height:250px;
+      border : 10px solid #000;
+      box-sizing: border-box;
+      padding:5px;
+    }
+    .wrap .mn main .content{
+      flex:5;
+      height:100%;
+    }
+    .wrap .mn main .sb{
+      flex:2.5;
+      height:100%;
+    }
+    .wrap .mn main .sm{
+      flex:2.5;
+      height:100%;
+    }
+    /* upper most */
+    .wrap .item.um {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* logo */
+    .wrap .item.um .logo .fa-solid.fa-mug-hot{
+      font-size: 3rem;
+      color: #333;
+
+    }
+    /* search */
+    .wrap .item.um .search .fa-sharp.fa-solid.fa-magnifying-glass {
+      padding: 0 5px;
+    }
+
+    /* uppermost menu */
+    .wrap .item.um .top-menu .menu{
+      display: flex;
+    }
+    .wrap .item.um .top-menu .menu .item:nth-of-type(1) {
+      margin-right: 10px;
+    }
+
+    /* header */
+    .wrap .item.hd {
+      background-image: url("https://cdn.pixabay.com/photo/2022/01/31/15/18/coffee-6984075_960_720.jpg");
+      background-size: 800px 200px;
+      background-position: center;    /* 배경이미지 위치 지정 */
+      background-repeat: no-repeat;   /* 이미지 반복제거 */
+      background-origin: border-box;  /* 경계선까지 이미지 반영 */
+    }
+
+    /* GNB */
+    .wrap .item.gnb {
+      display:flex;
+      align-items: center;
+      background-color: #555;
+      color: #eee;
+    }
+    .wrap .item.gnb .wrap-depth1 {
+      width:100%;
+    }
+    .wrap .item.gnb .depth1 {
+      display: flex;
+      justify-content: space-between;
+    }
+    .wrap .item.gnb .depth1 .menu{
+      flex: 1;
+      text-align: center;
+      letter-spacing: 0.2rem;
+      padding: 5px 0;
+    }
+    .wrap .item.gnb .depth1 .menu:hover{
+      background-color: #777;
+      color: #fff;
+    }
+    .wrap .item.gnb .depth1 .menu a{
+      display: inline-block;
+      width:100%;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/023d8f21ed.css" crossorigin="anonymous"> 
+  <script src="https://kit.fontawesome.com/023d8f21ed.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="item um-l">item1</div>
+    <div class="item um">
+      <div class="logo">
+        <a href="layout2.html"><i class="fa-solid fa-mug-hot"></i></a>
+      </div>
+      <div class="search">
+        <input type="search"><a href=""><i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
+      </div>
+      <div class="top-menu">
+        <ul class="menu">
+          <li class="item"><a href="">sign-in</a></li>
+          <li class="item"><a href="">sign-up</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="item um-r">item3</div>
+    <div class="item hd-l">item4</div>
+    <div class="item hd">item5</div>
+    <div class="item hd-r">item6</div>
+    <div class="item gnb-l">item7</div>
+    <div class="item gnb">
+      <nav class="wrap-depth1">
+        <ul class="depth1">
+          <li class="menu menu1"><a href="">menu1</a></li>
+          <li class="menu menu1"><a href="">menu1</a></li>
+          <li class="menu menu2"><a href="">menu2</a></li>
+          <li class="menu menu3"><a href="">menu3</a></li>
+          <li class="menu menu4"><a href="">menu4</a></li>
+          <li class="menu menu5"><a href="">menu5</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="item gnb-r">item9</div>
+    <div class="item mn-l">item10</div>
+    <div class="item mn">
+      <main>
+        <div class="content">content</div>
+        <div class="sb">sidebanner</div>
+        <div class="sm">sidemenu</div>
+      </main>
+    </div>
+    <div class="item mn-r">item12</div>
+    <div class="item fm-l">item13</div>
+    <div class="item fm">item14</div>
+    <div class="item fm-r">item15</div>
+    <div class="item ft-l">item16</div>
+    <div class="item ft">item17</div>
+    <div class="item ft-r">item18</div>
+  </div>
+</body>
+</html>

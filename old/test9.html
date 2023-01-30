@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            outline: 1px solid red;
+            width: 70%;
+        }
+        table{
+            border : 1px solid gray;
+            border-collapse: collapse;
+            background-color : yellow;
+            width: 100%;
+            
+        }
+        td, th{
+            border : 1px solid gray;
+        }
+        table thead{
+            background-color: orange;
+        }
+        table tfoot{
+            background-color: aqua;
+        }
+        table tbody tr:nth-child(2n+1){
+            background-color: orchid;
+        }
+    </style>
+</head>
+<body>
+    <table>   
+        <caption>테이블 제목</caption>     
+        <thead>
+            <tr>
+                <th>col1</th>
+                <th>col2</th>
+                <th>col3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <colgroup>
+                <col span = "2" style="font-size: 2em; background-color : brown;">
+                <!-- <col style="font-size: 3em; background-color : powderblue;"> -->
+                <col style="font-size: 4em;">
+            </colgroup>
+            <tr>
+                <td colspan="2" style="background-color : blue;">col4</td>
+                <!-- <td>col5</td> -->
+                <td>col6</td>
+            </tr>
+            <tr>
+                <td>col4</td>
+                <td>col5</td>
+                <td >col6</td>
+            </tr>
+            <tr>
+                <td>col4</td>
+                <td>col5</td>
+                <td>col6</td>
+            </tr>
+            <tr>
+                <td>col4</td>
+                <td>col5</td>
+                <td rowspan="3" style="background-color : blue;">col6</td>
+            </tr>
+            <tr>
+                <td>col4</td>
+                <td>col5</td>
+                <!-- <td>col6</td> -->
+            </tr>
+            <tr>
+                <td>col4</td>
+                <td>col5</td>
+                <!-- <td>col6</td> -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>col7</td>
+                <td>col8</td>
+                <td>col9</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

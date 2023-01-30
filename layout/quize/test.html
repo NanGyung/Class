@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        *{
+            margin: 0; 
+            width: 800px;
+        }
+        /* body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
+         p{
+            font-size: 15px; text-align: center;
+            padding: 15px 0;
+        }
+        .uppermost_menu{
+            background-color: rgb(100, 56, 119);
+            width: 100%; height: 50px;
+        }
+        header{
+            background-color: rgba(142, 85, 196, 0.98);
+            width: 100%; height: 150px;
+        }
+        header h3{ padding: 7% 0;}
+        nav{
+            background-color: rgba(138, 43, 226, 60%);
+            width: 100%; height: 50px;
+        }
+        main{
+            outline: 3px solid #000;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: stretch;
+            width: 100%; height: 100%;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(89, 89, 95);
+            width: 60%; height: 400px;
+        }
+        .side_banner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(88, 120, 173);
+            width: 20%; height: 400px;
+        }
+        .side_menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(108, 145, 108);
+            width: 20%; height: 400px;
+        }
+        .footer_menu{
+            background-color: rgba(138, 43, 226, 30%);
+            width: 100%; height: 50px;
+        }
+        footer{
+            background-color: rgba(138, 43, 226, 20%);
+            width: 100%; height: 150px;
+        }
+        footer p{
+            padding: 7% 0;
+        }
+        .container{
+            display: block;
+            z-index: -10;
+        }
+        .item1{
+            background-color: rgb(37, 12, 59);
+            width: 100%; height: 50;}
+    </style>
+</head>
+<body>
+    <div class="uppermost_menu">
+        <p>Uppermost Menu</p>
+    </div>
+    <header>
+        <p>Header</p>
+    </header>
+    <nav>
+        <p>Nav</p>
+    </nav>
+    <main>
+        <div class="content">
+            <p>Content</p>
+        </div>
+        <div class="side_banner">
+            <p>Sidebanner</p>
+        </div>
+        <div class="side_menu">
+            <p>Sidemenu</p>
+        </div>
+    </main>
+    <div class="footer_menu">
+        <p>Footer Menu</p>
+    </div>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <div class="container">
+       <div class="item1"></div>
+       <div class="item2"></div>
+       <div class="item3"></div>
+       <div class="item4"></div>
+       <div class="item5"></div>
+       <div class="item6"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            outline: 1px solid red;
+        }
+        body form:nth-of-type(1) > ul > li:nth-of-type(1){
+            background-color: yellow;
+        }
+        /* body form:nth-of-type(1) > ul > li ul > li:nth-of-type(1){
+            background-color: pink;
+        } */
+        body form:nth-of-type(1) ul ul li:nth-of-type(2){
+            background-color: yellowgreen;
+        }
+        body form:nth-of-type(1) ul ul li:first-child{
+            background-color: blue;
+        }
+        body form:nth-of-type(1) ul ul li:last-child{
+            background-color: pink;
+        }
+        header, footer{
+            background-color: powderblue;
+        }
+        input[type="number"]{
+            background-color: skyblue;
+        }
+        input[type="text"]{
+            background-color: orange;
+        }
+        footer:hover{
+            background-color: orangered;
+        }
+        p{
+            background-color: salmon;
+        }
+        p::first-letter{
+            font-size: 2em;
+        }
+        p::first-line{
+            background-color: yellow;
+        }
+        /* p > span {
+            font-size: 2em;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <header>머리글</header>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quis voluptatibus. Inventore assumenda sequi officia minima soluta ducimus quos illum id, corporis non alias expedita vero eos dicta incidunt voluptatum.
+    Maiores enim modi fuga, at officiis amet deleniti aliquid, beatae sapiente tempore quod voluptate totam aliquam rerum! Quas nulla quo rem dicta debitis soluta perspiciatis animi. Quo, cupiditate eaque. Obcaecati?
+    Vero dignissimos atque debitis assumenda quos a praesentium quisquam ex quasi aliquam error, unde impedit totam sed iste expedita. Natus doloremque quae nisi nulla tempora ad reprehenderit aperiam ab vero.</p>
+   <form action="">
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>
+            <form action="">
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </form>
+        </li>
+    </ul>
+   </form> 
+   <form action="">
+    <ul>
+        <li><input type="text"></li>
+        <li><input type="number"></li>
+        <li>item3</li>
+    </ul>
+   </form> 
+
+   <footer>바닥글</footer>
+</body>
+</html>

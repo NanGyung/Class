@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solution</title>
+    <style>
+        *{outline: 1px solid red;}
+        body {margin: 0;}
+        .wrap{
+            display: grid;
+            grid-template-areas: 
+                "um-l   um   um-r"
+                "hd-l   hd   hd-r"
+                "gnb-l  gnb  gnb-r"
+                "mn-l   mn   mn-r"
+                "fm-l   fm   fm-r"
+                "ft-l   ft   ft-r";
+            grid-template-columns: 1fr minmax(300px,800px) 1fr;
+            grid-template-rows: 50px 200px 50px auto 50px 150px;
+
+        }
+        .wrap .item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap .item.mn{
+            display: flex;
+            height: 250px;
+            border: 6px solid #000;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .wrap .mn .content{
+            flex: 5;
+            height: 100%;
+        }
+        .wrap .mn .sb{
+            flex: 2.5;
+            height: 100%;
+        }
+        .wrap .mn .sm{
+            flex: 2.5;
+            height: 100%;
+        }
+
+        .wrap .mn .content,
+        .wrap .mn .sb,
+        .wrap .mn .sm{
+            /* text-align: center;
+            line-height: 250px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item um-l">item1</div>
+        <div class="item um">
+            Uppermost Menu
+        </div>
+        <div class="item um-r">item3</div>
+        <div class="item hd-l">item4</div>
+        <div class="item hd">
+            Header
+        </div>
+        <div class="item hd-r">item6</div>
+        <div class="item gnb-l">item7</div>
+        <div class="item gnb">
+            Nav
+        </div>
+        <div class="item gnb-r">item9</div>
+        <div class="item mn-l">item10</div>
+        <div class="item mn">
+            <div class="content">Content</div>
+            <div class="sb">Sidebanner</div>
+            <div class="sm">Sidemenu</div>
+        </div>
+        <div class="item mn-r">item12</div>
+        <div class="item fm-l">item13</div>
+        <div class="item fm">
+            Footer main
+        </div>
+        <div class="item fm-r">item15</div>
+        <div class="item ft-l">item16</div>
+        <div class="item ft">
+            Footer
+        </div>
+        <div class="item ft-r">item18</div>
+    </div>
+</body>
+</html>
