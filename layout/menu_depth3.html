@@ -6,62 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            outline: 1px solid red;
+        body *{outline: 1px solid red;}
+        /* reset css : 기본요소의 css 초기화 */
+        body,ul {
+            margin: 0; padding: 0;
         }
+
         ul{
-            padding: 0; margin: 0;
-            list-style: none;
-            display: flex;
+            list-style-type: none;
+        }
 
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-
-        }
-        ul li{
-            position: relative;
-            line-height: 2rem; /* 줄 간격 */
-            width: 100px;
-            background-color: #88ffff;
-        }
-        ul li:hover{
-            background-color: #009faf;
-            color: #fff;
-        }
-        ul li:hover::before{
-            opacity: 1;
-        }
-        ul li::before{
-            content: ' ';
-            position: absolute;
-            bottom: 0; left: calc((100px - 5px)/2); 
-            opacity: 0;
-            border: 5px solid violet;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: #000;
-            border-left-color: transparent;
-        }
-        
-        ul li a {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
+        a{
             text-decoration: none;
             color: inherit;
-            font-weight: bold;
         }
+
+        /* gnb */
+        .gnb .item a{
+            display: inline-block;
+            width: 100%; height: 100%;
+        }
+   
+        .gnb .item{
+            width: 100px; 
+            line-height: 1.7rem;
+            padding-left: 10px;
+        }
+        
+        .gnb .depth2, 
+        .gnb .depth3 {
+            /* display 공간 차지x opacity, visibility 공간 그대로 */
+            display: none;
+            position: absolute;
+        }
+
+        .gnb .depth1 > .item{
+           position: relative;
+            /* background-color: pink; */
+        }
+
+        .gnb .depth2{
+            position: absolute;
+            left: 0;
+            background-color: yellow;
+        }
+
+
+        
+
+        .gnb .depth3{
+            top: 0; right: -110px;
+            background-color: yellowgreen;
+        }
+
+        .gnb .depth1 > .item:hover .depth2 {
+            display: block;
+        }
+
+        .gnb .depth2 > .item:hover .depth3 {
+            display: block;
+        }
+
+        .gnb .depth1 {
+            display: flex;
+        }
+
     </style>
 </head>
 <body>
-    <h1>1-depth menu</h1>
-    <nav>
-        <ul>
-            <li><a href="http://www.naver.com">menu1</a></li>
-            <li><a href="http://www.google.com">menu2</a></li>
-            <li><a href="#">menu3</a></li>
-        </ul>
+
+    <nav class="gnb">
+      <ul class="depth1">
+        <li class="item">
+            menu1
+            <ul class="depth2">
+                <li class="item"><a href="#">menu1_1</a></li>
+                <li class="item"><a href="#">menu1_2</a></li>
+            </ul>
+        </li>
+        <li class="item">
+            menu2
+            <ul class="depth2">
+                <li class="item"><a href="#">menu2_1</a></li>
+                <li class="item"><a href="#">menu2_2</a></li>
+                <li class="item"><a href="#">menu2_3</a></li>
+            </ul>
+        </li>
+        <li class="item">
+            menu3
+            <ul class="depth2">
+                <li class="item">
+                    menu3_1
+                    <ul class="depth3">
+                        <li class="item"><a href="#">menu3_1_1</a></li>
+                        <li class="item"><a href="#">menu3_1_2</a></li>
+                    </ul>
+                </li>
+                <li class="item">
+                    menu3_2
+                    <ul class="depth3">
+                        <li class="item"><a href="#">menu3_2_1</a></li>
+                        <li class="item"><a href="#">menu3_2_2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+      </ul>
     </nav>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati mollitia quia illo dolor sapiente id voluptate rerum libero labore ab, corporis error vero corrupti officia! Quam sapiente aspernatur eos. Tempore!
+        Consequuntur repudiandae repellendus mollitia neque deserunt unde modi commodi quos, ipsam reprehenderit corrupti non aperiam, iusto quibusdam culpa provident quaerat dolore tenetur, id adipisci autem sunt rem ad! Sint, nostrum.
+        Inventore, quod! Voluptates corporis rem nisi, earum impedit laboriosam ipsum numquam, assumenda possimus at nam! Ipsam cupiditate, dolores ullam voluptates id temporibus quaerat ab, tenetur asperiores reprehenderit vero, deserunt reiciendis.
+        Nisi, laborum voluptatum esse corporis tempora sequi in reprehenderit molestias ipsam odit totam aliquid molestiae amet iure ea porro itaque laboriosam ut dicta incidunt eos illo qui. Ad, velit totam?
+        Officiis sequi, quos totam qui explicabo a tenetur ab id nobis vel ipsa maiores, blanditiis, odit porro incidunt cumque velit. Voluptate, beatae cupiditate eius tempora quidem recusandae dolorum est eveniet?
+        Ab cupiditate quis blanditiis reiciendis eum inventore, distinctio hic dolores animi voluptatem voluptate quia maiores. Numquam inventore, neque ipsum commodi sint, nemo illo ea qui vitae culpa facilis? Cum, blanditiis.
+        Ipsum mollitia error fuga hic voluptatem sapiente eos dolorum, voluptate, quisquam beatae fugit ut, assumenda nihil? Vero minus veritatis sint totam commodi est explicabo, expedita harum obcaecati dolores quo sit.
+        Magnam, rem dolore maxime ratione eum quas eaque atque commodi alias eos quibusdam animi molestias officiis veritatis. At, veniam natus. Quis unde itaque eos ut aliquam a beatae quasi in?
+        Quis accusantium magnam harum aliquid quia omnis quaerat? Culpa harum, dolore ipsa minima quam vitae qui expedita minus quos mollitia? Molestiae temporibus reprehenderit cum? Itaque voluptatum officia blanditiis quasi. Commodi.
+        At dolores reiciendis amet itaque cupiditate dolorem debitis! Dicta in aliquid non odio ab exercitationem sint, et obcaecati rem praesentium, beatae nobis omnis quaerat dolorum iste. Commodi temporibus eum nam!</p>
+    </main>
 </body>
 </html>
