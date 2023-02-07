@@ -1,0 +1,9 @@
+/* 전체 레이아웃 */
+.wrap-footer {
+  display: grid;
+  grid-template-areas: 
+    "footerLogo"
+    "footerContents"
+    "footerInformation"
+  ;
+}

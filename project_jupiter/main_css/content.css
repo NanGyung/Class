@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+/* 전체 레이아웃 */
+.wrap-content {
+  display: grid;
+  grid-template-areas: 
+    "mainSlide"
+    "hospitalSearch"
+    "hospitalReview"
+    "hospitalCommunity"
+  ;
+  grid-template-rows: 600px 600px 600px auto ;
+  width: 100%;
+}
+/* 메인슬라이드 */
+.wrap-content .item.mainSlide{
+  box-sizing: border-box;
+  background-color: #e1e2e1;
+}
+.wrap .mn .content{
+  flex:6;
+  height:100%;
+}
+.wrap .mn .sb{
+  flex:2;
+  height:100%;
+}
+.wrap .mn .sm{
+  flex:2;
+  height:100%;
+}
+/* upper most */
+.wrap .item.um {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 상단카테고리고정 */
+  position: sticky;
+  top: 0;
+}
+.wrap .item.um,
+.wrap .item.um-l,
+.wrap .item.um-r {
+  grid-area: um;
+  background-color: #777;
+  color: #eee;
+}
+
+.wrap .item.um .wrap-um {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 15px;
+
+/* logo */
+.wrap .item.um .logo .fa-solid.fa-mug-hot{
+  font-size: 3rem;
+  color: #eee
+}
+/* search */
+.wrap .item.um .search input[type=search] {
+  width: 300px;
+  outline: none;
+  padding: 3px;
+}
+.wrap .item.um .search .fa-sharp.fa-solid.fa-magnifying-glass {
+  padding: 0 5px;
+
+/* uppermost menu */
+.wrap .item.um .top-menu .menu{
+  display: flex;
+}
+.wrap .item.um .top-menu .menu .item:nth-of-type(1) {
+  margin-right: 10px;
+
+/* header */
+.wrap .item.hd {
+  background-image: url("https://cdn.pixabay.com/photo/2022/01/31/15/18/coffee-6984075_960_720.jpg");
+  background-size: 1000px 200px;
+  background-position: center;    /* 배경이미지 위치 지정 */
+  background-repeat: no-repeat;   /* 이미지 반복제거 */
+  background-origin: border-box;  /* 경계선까지 이미지 반영 */
+  position: relative;
+}
+/* 메인 이미지 위에 카피작성( 부모 element인 header쪽에 작성) */
+.wrap .item.hd .copy-phrase {
+  color: #ddd;  
+  transform: rotate(-10deg);
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  font-size: 1.5rem;
+  box-shadow: 5px 5px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.wrap .item.hd .copy-phrase:hover {
+  transform: rotate(-3deg);
+}   
+/* GNB */
+.wrap .item.gnb {
+  display:flex;
+  align-items: center;
+  background-color: #555;
+  color: #eee
+  /* 고정 실행시키면 암 */
+  position: sticky;
+  top: 50px;
+  padding: 0 10px;
+}
+/* 중간정렬시 상위 nav의 width가 지정되어 있어야 한다. */
+.wrap .item.gnb .wrap-gnb {
+  width: 100%;
+}
+.wrap .item.gnb .wrap-gnb .depth1 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.wrap .item.gnb .wrap-gnb .depth1 li {
+  width: 100%;
+  /* li 기준으로 position을 잡는다(하위메뉴) */
+  position: relative;
+}
+.wrap .item.gnb .wrap-gnb .depth1 li:hover {
+  background-color: #444;
+  color: #eee;
+
+/* 하위메뉴 */
+.wrap .item.gnb .wrap-gnb .depth1 li:hover .depth2 {
+  display: block;
+  position: absolute;
+  width: 100%;
+  background-color: #555;
+  color: #eee;
+  box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.2);
+  top: 3.2rem;
+}
+.wrap .item.gnb .depth2 {
+  display: none;
+
+/* 높이 */
+.wrap .item.gnb .wrap-gnb .depth1 li,
+.wrap .item.gnb .wrap-gnb .depth2 li {
+  padding: 1.0rem 0;
+
+/* FNB */
+.wrap .item.fm {
+  display:flex;
+  align-items: center;
+  background-color: #555;
+  color: #eee
+  /* 고정 실행시키면 암 */
+  position: sticky;
+  top: 50px;
+  padding: 0 10px;
+}
+.wrap .item.fm .wrap-depth1 {
+  width:100%;
+}
+.wrap .item.fm .depth1 {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .item.fm .depth1 .menu{
+  flex: 1;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  padding: 5px 0;
+}
+.wrap .item.fm .depth1 .menu:hover{
+  background-color: #777;
+  color: #fff;
+}
+.wrap .item.fm .depth1 .menu a{
+  display: inline-block;
+  width:100%;
+
+/* main */
+/* products */
+.wrap .item.mn .content .products {
+  display: grid;
+  /* 폭에 맞춰서 auto-fit, auto-fill*/
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  grid-auto-rows: 100px;
+  gap: 10px;
+}
+/* 이미지의 효과 */
+.wrap .item.mn .content .products .p img {
+  /* 해당 이미지 지연시간  */
+  transition: all 0.2s linear;
+}
+.wrap .item.mn .content .products .p img:hover {
+  transform: scale(1.2);
+
+.wrap .item.mn-r .wrap-ads {
+  position: sticky;
+  top: 300px;
+  background-color: antiquewhite;
+  border-radius: 10%;
+  margin-left: 8px;
+  width: 100px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.1);
+
+/* footer */
+.wrap .item.ft .ft-contents {
+  /* background-color: yellow; */
+  display: grid;
+  grid-template-areas: 
+    "c1 c2 c3 c4"
+    "c5 c5 c5 c5";
+  grid-template-columns: 1fr 1fr 2fr 3fr;
+  grid-auto-rows: auto; 
+  padding:20px; 
+  row-gap: 20px;
+  column-gap: 10px;
+  font-size: 0.75rem;
+  color:#7D7D7D;
+}
+.wrap .item.ft .ft-contents .ft-contents-1 {
+  width:100px; height:100px;
+  background-color: red;
+  color:white;
+  text-align: center;
+  line-height: 100px;
+}
+.wrap .item.ft .ft-contents .ft-contents-5 {
+  grid-area: c5;
+  text-align: center;
+}
+.wrap .item.ft .ft-contents p {
+  padding-bottom: 5px;
+}
+.wrap .item.ft .ft-contents .title {
+  font-weight: bold;
+  color:#000;
+} 
+.wrap .item.ft .ft-contents .tel {
+  font-weight: bold;
+  color:#000;
+  font-size: 1.3rem;
+  padding: 10px 0;
+} 
+.wrap .item.ft .ft-contents .tel i {
+  margin-right: 10px;
+}
+.wrap .item.ft .ft-contents .account {
+  font-weight: bold;
+  color: rgb(55, 55, 160);
+}
+.wrap .item.ft .ft-contents .highlight-1{
+  background-color: blue;
+  color:white;
+}
+.wrap .item.ft .ft-contents .highlight-2{
+  background-color: black;
+  color:white;
+}
+.wrap .item.ft .ft-contents .highlight-3{
+  background-color: lightgray;
